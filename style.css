@@ -1,42 +1,66 @@
+/* Global Reset */
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 20px;
     background-color: #1e1e1e;
     color: #ffffff;
+    margin: 0;
+    padding: 20px;
 }
+
+/* Header */
 header {
     background-color: #333;
     padding: 20px;
     border-radius: 10px;
+    text-align: center;
 }
+
+/* Headings */
 h1, h2 {
     color: #f39c12;
+    text-align: center;
 }
-p, li {
-    font-size: 18px;
+
+/* Paragraphs & Lists */
+p, ul {
+    text-align: left;
+    margin: 0 auto;
+    max-width: 800px; /* Improves readability */
 }
+
+/* Unordered Lists */
 ul {
     list-style-type: none;
     padding: 0;
 }
+
 ul li {
     background: #444;
-    margin: 10px;
-    padding: 10px;
+    margin: 10px auto;
+    padding: 15px;
     border-radius: 5px;
+    max-width: 600px; /* Keeps it well-aligned */
 }
+
+/* Links */
 a {
     color: #f39c12;
     text-decoration: none;
 }
+
 a:hover {
     text-decoration: underline;
 }
+
+/* Contact Section */
 .contact {
     background: #444;
     padding: 15px;
     border-radius: 8px;
+    text-align: center;
 }
 
