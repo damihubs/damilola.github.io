@@ -1,24 +1,28 @@
-name: Deploy GitHub Pages
+name: 🚀 Deploy Portfolio to GitHub Pages
+
 on:
   push:
     branches:
-      - main
+      - main  # Change if your default branch is different
+
+permissions:
+  contents: write
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Code
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Set up SSH Key
-        uses: webfactory/ssh-agent@v0.5.3
+      - name: Setup Node.js (for peaceiris/actions-gh-pages dependency)
+        uses: actions/setup-node@v3
         with:
-          ssh-private-key: ${{ secrets.ACTIONS_DEPLOY_SSH_KEY }}
+          node-version: '18'
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_SSH_KEY }}
-          publish_dir: .
-          publish_branch: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./  # root directory since your HTML is there
